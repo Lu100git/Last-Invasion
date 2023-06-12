@@ -681,6 +681,7 @@ class Game:
 				# if the lasers colide with mini boss take away 1 life from miniboss
 				if player.lasers[i].colidesWith(mini_boss) and mini_boss.alive:
 					mini_boss.life -= 1
+					player.score += 1
 					player.lasers.pop(i)
 					pygame.mixer.Sound.play(hit)
 					break
@@ -815,47 +816,6 @@ class Game:
 			#========================================================================================
 
 
-			#<<<<<<<<<<<<<<<<<<<<<<<  movement  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-			# PLAYER MOVEMENT, ASTEROIDS MOVEMENT, UFO MOVEMENT AND MINI BOSS MOVEMENT
-			player.update(moving_up, moving_down, moving_left, moving_right)
-			for i in range(len(asteroids)):
-				asteroids[i].update()
-
-			ufo.update()
-			ufo2.update()
-			mini_boss.newUpdate()
-
-			# move the background planets
-			planets[planet_index].x -= 0.5
-			if planets[planet_index].x < -1000:
-				planets[planet_index].x = WINDOW_WIDTH + 200
-				planets[planet_index].y = random.randint(0, WINDOW_HEIGHT - planets[planet_index].w)
-				planet_index += 1
-				planet_index %= len(planets)
-
-
-			if player.life > 100:
-				player.life = 100
-
-			if active_cell:
-				cell.x -= 2
-				if cell.x < -cell.w:
-					active_cell = False
-					cell.x = WINDOW_WIDTH + cell.w
-					cell.y = random.randint(0, WINDOW_HEIGHT - cell.h)
-
-			if active_cell2:
-				cell2.x -= 2
-				if cell2.x < -cell.w:
-					active_cell2 = False
-					cell2.x = WINDOW_WIDTH + cell.w
-					cell2.y = random.randint(0, WINDOW_HEIGHT - cell.h)
-
-			# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
-
 			## FONTS AND LIFE BARS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 			if player.life < 31:
@@ -908,6 +868,45 @@ class Game:
 				running = False
 
 			# -----------------------------------------------------------------
+
+			#<<<<<<<<<<<<<<<<<<<<<<<  movement  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+			# PLAYER MOVEMENT, ASTEROIDS MOVEMENT, UFO MOVEMENT AND MINI BOSS MOVEMENT
+			player.update(moving_up, moving_down, moving_left, moving_right)
+			for i in range(len(asteroids)):
+				asteroids[i].update()
+
+			ufo.update()
+			ufo2.update()
+			mini_boss.newUpdate()
+
+			# move the background planets
+			planets[planet_index].x -= 0.6
+			if planets[planet_index].x < -1000:
+				planets[planet_index].x = WINDOW_WIDTH + 200
+				planets[planet_index].y = random.randint(0, WINDOW_HEIGHT - planets[planet_index].w)
+				planet_index += 1
+				planet_index %= len(planets)
+
+
+			if player.life > 100:
+				player.life = 100
+
+			if active_cell:
+				cell.x -= 2
+				if cell.x < -cell.w:
+					active_cell = False
+					cell.x = WINDOW_WIDTH + cell.w
+					cell.y = random.randint(0, WINDOW_HEIGHT - cell.h)
+
+			if active_cell2:
+				cell2.x -= 2
+				if cell2.x < -cell.w:
+					active_cell2 = False
+					cell2.x = WINDOW_WIDTH + cell.w
+					cell2.y = random.randint(0, WINDOW_HEIGHT - cell.h)
+
+			# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 			#***************************    RENDER 		*****************************************************************************************************
@@ -997,7 +996,6 @@ mainTitle.run()
 if mainTitle.playGame:
 	mainGame = Game()
 	mainGame.run()
-	#system("clear")
 	mainGame.game_over()
 	print(mainGame.not_game_over)
 
@@ -1006,15 +1004,9 @@ if mainTitle.playGame:
 	while ending.playGame:
 		if ending.playGame:
 			mainGame.run()
-			#system("clear")
 			mainGame.game_over()
 			ending.score = mainGame.final_score
 			ending.player_life = mainGame.final_life
 			ending.run()
-			#system("clear")
 
 quit()
-
-
-
-
