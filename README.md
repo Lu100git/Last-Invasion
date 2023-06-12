@@ -3,7 +3,7 @@ a simple asteroids shooter game made with pygame
 
 
 
-# THE GAME WAS CODED BY ME, IF YOU WANT TO ADD LEVELS OR USE THIS COE AS A REFERENCE FOR YOUR ENGINE,
+# THE GAME WAS CODED BY ME, IF YOU WANT TO ADD LEVELS OR USE THIS CODE AS A REFERENCE FOR YOUR ENGINE,
 # GO FOR IT, I DON'T MIND, BUT IF YOU ARE GONNA USE THE SPRITES, MAKE SURE TO CREDIT ALL THE AUTHORS
 
 #####################################################################################################
