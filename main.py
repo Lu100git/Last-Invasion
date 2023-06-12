@@ -834,6 +834,9 @@ class Game:
 			life = pygame.font.Font("font/Arcade.ttf", 80)
 			life = life.render("LIFE ", False, (0,255,0))
 
+			#prevents glitches
+			if player.life < 0:
+				player.life = 0
 			life_bar = pygame.transform.scale(bar.surface, (player.life, bar.h))
 
 			if mini_boss.life < 0:
@@ -928,8 +931,6 @@ class Game:
 			if game_time < 1050:
 				black_screen.drawBlackScreen(window)
 
-
-
 			for i in range(stars_amount):
 				stars[i].x -= fast_star_speed
 				if stars[i].x < - 6:
@@ -937,21 +938,17 @@ class Game:
 				stars[i].draw(window)
 
 			player.rotationDraw(window)
-
 			for i in range(len(powerUps)):
 				powerUps[i].update(player.x + player.w // 2, player.y + player.h // 2)
 				powerUps[i].spin()
 				powerUps[i].drawCircle(window)
 
-			# if game_time < 1170:
+			if game_time < 1050:
 				for i in range(len(asteroids)):
 					asteroids[i].draw(window)
 
-
 			ufo.draw(window)
 			ufo2.draw(window)
-
-
 			mini_boss.rotationDraw(window)
 
 
@@ -996,6 +993,7 @@ mainTitle.run()
 if mainTitle.playGame:
 	mainGame = Game()
 	mainGame.run()
+	#system("clear")
 	mainGame.game_over()
 	print(mainGame.not_game_over)
 
@@ -1004,9 +1002,15 @@ if mainTitle.playGame:
 	while ending.playGame:
 		if ending.playGame:
 			mainGame.run()
+			#system("clear")
 			mainGame.game_over()
 			ending.score = mainGame.final_score
 			ending.player_life = mainGame.final_life
 			ending.run()
+			#system("clear")
 
 quit()
+
+
+
+
