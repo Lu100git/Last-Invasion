@@ -866,7 +866,7 @@ class Game:
 				mini_boss.alive = True
 
 			# if pass miniboss spawn time and booth enemies dead game over, player wins
-			if game_time > 1050 and not mini_boss.alive and not ufo.alive:
+			if game_time > 1050 and not mini_boss.alive and not ufo.alive and not ufo2.alive:
 				sleep(1.0)
 				running = False
 
