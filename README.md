@@ -16,7 +16,7 @@ a simple asteroids shooter game made with pygame
 # pasenla bien y que tengan buen dia
 
 # select menu and clicking menu sounds provided by:
-https://justsoundeffects.com/
+# https://justsoundeffects.com/
 
 CREDITS TO EVERYONE WHO SHARED THEIR CONTENT FROM OPENGAMEART.ORG
 
