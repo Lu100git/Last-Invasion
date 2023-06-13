@@ -17,7 +17,7 @@ WINDOW_HEIGHT = 720
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
 select = pygame.mixer.Sound("sound/select.ogg")
-confirm = pygame.mixer.Sound("sound/confirm.wav")
+confirm = pygame.mixer.Sound("sound/confirm.ogg")
 # main theme
 def playMusic():
 	pygame.mixer.music.load("sound/magic space.mp3")
