@@ -4,6 +4,7 @@ import sys
 from time import sleep
 
 pygame.init()
+pygame.mixer.pre_init(44100, 16, 2, 512)
 
 YELLOW = (255,255,0)
 GREEN = (0,255,0)
