@@ -33,7 +33,7 @@ class Rect(object):
 
 	def drawCircle(self, window):
 		if self.active:
-			pygame.draw.circle(window, YELLOW, (self.x, self.y), self.w)
+			pygame.draw.circle(window, YELLOW, (int(self.x), int(self.y)), self.w)
 
 	def update(self, x, y):
 		self.initialX = x
