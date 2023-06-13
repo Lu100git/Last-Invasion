@@ -15,6 +15,8 @@ a simple asteroids shooter game made with pygame
 # pero mas que nada, espero que este projecto les ayude a entender muchos de los conceptos involucrados en desarrollo de video juegos
 # pasenla bien y que tengan buen dia
 
+# select memnu and clicking menu sounds provided by:
+https://justsoundeffects.com/
 
 CREDITS TO EVERYONE WHO SHARED THEIR CONTENT FROM OPENGAMEART.ORG
 
