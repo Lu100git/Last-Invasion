@@ -671,7 +671,7 @@ class Game:
 					pygame.mixer.Sound.play(hit)
 					break
 				if player.lasers[i].colidesWith(ufo2) and ufo2.alive:
-					ufo2.life -= 1
+					ufo2.life -= 1.8
 					player.score += 1
 					player.lasers.pop(i)
 					pygame.mixer.Sound.play(hit)
