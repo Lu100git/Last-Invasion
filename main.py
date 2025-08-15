@@ -492,7 +492,7 @@ class Game:
 		# ^^^^^^^^^^^^^^^^^^^^^^    CREATING ALL THE ENTITIES AND ITEMS FOR THE GAME ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 		# PLAYER    #
-		player = Entity(0, 0, 60, 60, "asets/ship.png")
+		player = Entity(0, WINDOW_HEIGHT // 2, 60, 60, "asets/ship.png")
 		player.setAngle(270)
 		player.laser_speed = 60
 
